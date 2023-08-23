@@ -1,0 +1,23 @@
+model: wrn
+dataset_in: cifar10
+dataset_out: GAN_IMG
+# Optimization
+epochs: 1
+learning_rate: 0.001
+batch_size: 256
+oe_batch_size: 256
+test_bs: 256
+momentum: 0.9
+decay: 0.0005
+# Outlier Exposure
+#m_in: -25
+#m_out: -7
+score: softmax
+
+# adversarial attacks on outliers
+adv_oe: FGSM #[FGSM,PGD,MIFGSM,None]
+eps_oe: 0.07
+alpha_oe: 0.03
+steps_oe: 20
+epsilon_order: False #[up,down,oscillate,False]
+
